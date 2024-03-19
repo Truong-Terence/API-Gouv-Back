@@ -4,7 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-.gitignore
+### DATABASE ###
+./src/main/resourses/application.properties
 
 ### STS ###
 .apt_generated
