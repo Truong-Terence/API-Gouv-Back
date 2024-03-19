@@ -15,6 +15,9 @@
 	<description>Spring project for gouv APIs</description>
 	<properties>
 		<java.version>21</java.version>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+		<!-- <spring.version>x.x.x</spring.version> -->
 	</properties>
 	<dependencies>
 		<dependency>
@@ -60,6 +63,12 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
