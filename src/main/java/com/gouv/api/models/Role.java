@@ -1,15 +1,23 @@
 package com.gouv.api.models;
 
-import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name="roles")
 public class Role implements GrantedAuthority {
+
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="role_id")
     private Integer roleId;
+
     private String authority;
 
     public Role(){
@@ -24,6 +32,7 @@ public class Role implements GrantedAuthority {
         this.roleId = roleId;
         this.authority = authority;
     }
+
     @Override
     public String getAuthority() {
         return this.authority;
@@ -40,5 +49,4 @@ public class Role implements GrantedAuthority {
     public void setRoleId(Integer roleId){
         this.roleId = roleId;
     }
-
 }

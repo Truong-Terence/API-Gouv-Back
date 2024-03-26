@@ -2,6 +2,7 @@ package com.gouv.api.services;
 
 import com.gouv.api.models.ApplicationUser;
 import com.gouv.api.models.Role;
+import com.gouv.api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -16,16 +17,11 @@ import java.util.Set;
 public class UserService implements UserDetailsService {
     @Autowired
     private PasswordEncoder encoder;
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println("In the user details service");
-
-        if (!username.equals("Lucas")) throw new UsernameNotFoundException("Not Lucas");
-
-        Set<Role> roles = new HashSet<>();
-        roles.add(new Role(1,"USER"));
-
-        return new ApplicationUser(1, "Lucas", encoder.encode("password"), roles);
+        return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("user is not valid"));
     }
 }

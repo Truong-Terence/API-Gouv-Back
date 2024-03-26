@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.gouv.api.models.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -66,11 +65,13 @@ public class ApplicationUser implements UserDetails{
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        // TODO Auto-generated method stub
         return this.authorities;
     }
 
     @Override
     public String getPassword() {
+        // TODO Auto-generated method stub
         return this.password;
     }
 
@@ -80,6 +81,7 @@ public class ApplicationUser implements UserDetails{
 
     @Override
     public String getUsername() {
+        // TODO Auto-generated method stub
         return this.username;
     }
 
@@ -90,21 +92,25 @@ public class ApplicationUser implements UserDetails{
     /* If you want account locking capabilities create variables and ways to set them for the methods below */
     @Override
     public boolean isAccountNonExpired() {
+        // TODO Auto-generated method stub
         return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
+        // TODO Auto-generated method stub
         return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
+        // TODO Auto-generated method stub
         return true;
     }
 
     @Override
     public boolean isEnabled() {
+        // TODO Auto-generated method stub
         return true;
     }
 
